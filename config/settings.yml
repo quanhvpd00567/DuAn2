@@ -1,0 +1,7 @@
+user:
+  roles:
+    super_admin: 0
+    admin: 1
+    member: 2
+
+api:

@@ -5,9 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-
 # Use mysql2 as the database for Active Record
-gem 'mysql2', '>= 0.3.13', '< 0.5'
+gem 'mysql2', '~> 0.5.2'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -29,11 +28,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
+# Gem devise
+gem 'devise'
+
+gem 'jwt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 # config
 # gem 'config', '~> 1.4'
 # kaminari
@@ -42,15 +44,15 @@ gem 'kaminari'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'config'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
-
-
 gem 'active_model_serializers', '~> 0.10.0'
