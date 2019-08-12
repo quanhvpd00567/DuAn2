@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :manager do
     get '/', to: 'index#index'
   end
@@ -10,7 +11,9 @@ Rails.application.routes.draw do
   # Api
   namespace :api do
     namespace :v1 do
+      resources :session
       resources :users
+      get 'test', to: 'session#test', as: 'test'
     end
   end
 end
