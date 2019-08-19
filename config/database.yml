@@ -9,12 +9,12 @@ default: &default
   pool: 5
   timeout: 5000
   username: root
-  password: 123456
+  password:
   host: 127.0.0.1
   # socket: /tmp/mysql.sock
-  charset: utf8mb4
-  encoding: utf8mb4
-  collation: utf8mb4_bin
+#  charset: utf8mb4
+#  encoding: utf8mb4
+#  collation: utf8mb4_bin
 
 development:
   <<: *default

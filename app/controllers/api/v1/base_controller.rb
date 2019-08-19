@@ -11,13 +11,14 @@ module Api::V1
                 begin
                     jwt_payload = JWT.decode(token, Rails.application.secrets.secret_key_base).first
                     @current_user_id = jwt_payload['id']
+                    exp = jwt_payload['exp']
                     # head 403 if jwt_payload['exp'] < 10
                 rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
                     head :unauthorized
                 end
             end
         else
-          head 404
+          head :unauthorized
         end
     end
 
@@ -33,16 +34,16 @@ module Api::V1
       @current_user_id.present?
     end
 
-    def admin
-      current_user&.role == Settings.user.roles.admin ? true : false
+    def is_admin
+      current_user&.role == Settings.user.roles.admin
     end
 
-    def super_admin
-      current_user&.role == Settings.user.roles.super_admin ? true : false
+    def is_super_admin
+      current_user&.role == Settings.user.roles.super_admin
     end
 
-    def member
-      current_user&.role == Settings.user.roles.member ? true : false
+    def is_member
+      current_user&.role == Settings.user.roles.member
     end
 
   end

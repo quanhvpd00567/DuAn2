@@ -3,5 +3,13 @@ user:
     super_admin: 0
     admin: 1
     member: 2
-
+  gender:
+    value:
+      female: 0
+      male: 1
+      other: 2
+    show:
+      0: 'female'
+      1: 'male'
+      2: 'other'
 api:

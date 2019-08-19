@@ -1,1 +1,5 @@
-ádsad
+<%- @users.each do |item| %>
+    <%= item.id %>
+<% end %>
+
+<%= paginate @users %>
