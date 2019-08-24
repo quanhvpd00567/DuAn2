@@ -8,7 +8,7 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  username: root
+  username: quanhv
   password: 123456
   host: 127.0.0.1
   # socket: /tmp/mysql.sock
