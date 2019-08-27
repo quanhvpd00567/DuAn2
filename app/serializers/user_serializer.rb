@@ -1,3 +1,9 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :email, :book_copies
+  attributes :id, :full_name, :gender, :email, :display_gender
+
+  def self.get_list
+	User::all
+  end
+
+  
 end

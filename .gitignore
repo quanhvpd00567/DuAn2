@@ -12,7 +12,7 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-bin/*
+# bin/*
 tmp/*
 !/log/.keep
 !/tmp/.keep
@@ -28,3 +28,5 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 .idea
+.vscode
+config/database.yml
